@@ -18,7 +18,7 @@ def show_session(key):
     # Flask takes the values in session obj and seializes them into a cookie
     # use ternary operator to set values for session
     # can be session.get("hello")/"World"
-    session["hello"] = session.get("hello") or "World"
+    session["hello"] = session.get("hello") or "World"  # ??? why or "World"
     session["goodnight"] = session.get("goodnight") or "Moon"
 
     response = make_response(jsonify({
@@ -38,7 +38,6 @@ def show_session(key):
     #     print(request.cookies[cookie]) 
 
     response.set_cookie('mouse', 'Cookie')
-
     return response
 
 if __name__ == '__main__':
